@@ -24,7 +24,7 @@ export default async function Post({ params }: Params) {
         <article className="mb-32">
           <PostHeader
             title={post.title}
-            coverImage={post.coverImage}
+            coverImage={"/assets/blog/" + post.slug + ".jpg"}
             date={post.date}
           />
           <PostBody content={content} />
