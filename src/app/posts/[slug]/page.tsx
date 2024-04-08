@@ -4,6 +4,7 @@ import Header from "@/app/_components/header";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
+import { COVER_EXT, COVER_PATH } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
 import { notFound } from "next/navigation";
 
@@ -24,7 +25,7 @@ export default async function Post({ params }: Params) {
         <article className="mb-32">
           <PostHeader
             title={post.title}
-            coverImage={"/assets/blog/" + post.slug + ".jpg"}
+            coverImage={COVER_PATH + post.slug + COVER_EXT}
             date={post.date}
           />
           <PostBody content={content} />
